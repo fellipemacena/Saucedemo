@@ -1,0 +1,144 @@
+{
+  "name": "proj1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run --e2e --browser chrome --spec **/*.feature",
+    "cy:open:hml": "cypress open --env configFile=hml",
+    "cy:run:hml": "cypress run --env configFile=hml",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:tags": "cypress-tags run -e",
+    "cy:report": "node ./cypress/support/reporter.js",
+    "cy:clear": "node ./cypress/support/clear.js",
+    "testreport": "cypress run --browser chrome --reporter mochawesome",
+    "posttest": "mochawesome-merge cypress/results/mocha/*.json > cypress/results/mochawesome.json && marge cypress/results/mochawesome.json -o cypress/result/report"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.22.10",
+    "@babel/parser": "^7.21.4",
+    "@babel/preset-env": "^7.22.10",
+    "@babel/types": "^7.21.4",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "@cypress/webpack-preprocessor": "^5.17.1",
+    "@types/cli-table": "^0.3.1",
+    "@types/common-ancestor-path": "^1.0.0",
+    "@types/debug": "^4.1.7",
+    "@types/glob": "^8.1.0",
+    "@types/jsdom": "^21.1.1",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.4.9",
+    "@types/pngjs": "^6.0.1",
+    "@types/prettier": "^2.7.2",
+    "@types/seedrandom": "^3.0.5",
+    "@types/split": "^1.0.2",
+    "@types/stream-buffers": "^3.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "ast-types": "^0.15.2",
+    "babel-loader": "^9.1.3",
+    "cypress": "^12.17.3",
+    "esbuild": "^0.19.0",
+    "eslint": "^8.39.0",
+    "eslint-import-resolver-typescript": "^3.6.0",
+    "eslint-plugin-import": "^2.28.0",
+    "jsdom": "^21.1.1",
+    "pngjs": "^7.0.0",
+    "prettier": "^2.8.8",
+    "recast": "^0.22.0",
+    "rollup": "^3.21.5",
+    "stream-buffers": "^3.0.2",
+    "strip-ansi": "^6.0.1",
+    "strip-indent": "^3.0.0",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "tsd": "^0.28.1",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/e2e/[filepath]/**/*.{js,ts}",
+      "cypress/e2e/[filepath].{js,ts}",
+      "cypress/e2e/step_definitions/**/*.{js,ts}"
+    ]
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.4",
+    "@cucumber/cucumber": "^9.1.0",
+    "@cucumber/cucumber-expressions": "^16.1.2",
+    "@cucumber/gherkin": "^26.2.0",
+    "@cucumber/html-formatter": "^20.3.0",
+    "@cucumber/message-streams": "^4.0.1",
+    "@cucumber/messages": "^22.0.0",
+    "@cucumber/pretty-formatter": "^1.0.0",
+    "@cucumber/tag-expressions": "^5.0.1",
+    "base64-js": "^1.5.1",
+    "chalk": "^4.1.2",
+    "cli-table": "^0.3.11",
+    "common-ancestor-path": "^1.0.1",
+    "cosmiconfig": "^8.1.3",
+    "debug": "^4.3.4",
+    "error-stack-parser": "^2.1.4",
+    "esbuild": "^0.19.0",
+    "glob": "^10.2.2",
+    "is-path-inside": "^3.0.3",
+    "md5": "^2.3.0",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "seedrandom": "^3.0.5",
+    "source-map": "^0.7.4",
+    "split": "^1.0.1",
+    "uuid": "^9.0.0"
+  },
+  "peerDependencies": {
+    "@cypress/browserify-preprocessor": "^3.0.1",
+    "cypress": "^10.0.0 || ^11.0.0 || ^12.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@cypress/browserify-preprocessor": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          "argsIgnorePattern": "^_",
+          "varsIgnorePattern": "^_",
+          "caughtErrorsIgnorePattern": "^_"
+        }
+      ],
+      "@typescript-eslint/no-explicit-any": 0,
+      "@typescript-eslint/no-floating-promises": "error"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": [
+        "tsconfig.eslint.json"
+      ]
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "ignorePatterns": [
+      "examples/**/*",
+      "tmp/**/*",
+      "**/*.js",
+      "**/*.d.ts"
+    ],
+    "root": true
+  }
+}

@@ -1,0 +1,41 @@
+{
+    "compilerOptions": {
+        "types": ["cypress", "node", "@badeball/cypress-cucumber-preprocessor"],
+        "baseUrl": "./",
+        "target": "ES5",
+        "lib": ["ES5","dom"],
+        "paths": {
+            "jquery": ["node_modules/jquery/dist/jquery"]
+        },
+        "moduleResolution": "Node",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "outDir": "dist",
+        "declaration": true,
+        "skipLibCheck": true,
+        "noImplicitAny": false,
+        "strict": true,
+        "strictNullChecks": true,
+        "jsx": "react",
+        "noUnusedParameters": true,
+        "noUnusedLocals": true,
+        "allowSyntheticDefaultImports":true,
+        "importHelpers": true,
+        "module": "commonjs",
+        
+    },
+    "include":[
+        "lib/**/*.ts",
+        "/**/*.ts",
+        "augmentations.d.ts",
+        "declarations.d.ts",
+        "./node_modules/cypress",
+        "cypress/**/*.js",
+        "cypress/**/*.ts",
+        "cypress/**/*.json",
+        "cypress/**/**/*.ts",
+        "cypress/**/**/*.js",
+        "index.d.ts"
+    ],
+
+}

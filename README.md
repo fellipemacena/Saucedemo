@@ -9,3 +9,12 @@
 2)Amazon.com
 
 3)Google Maps
+
+
+Linhas de comandos:
+
+Para abrir o cypress e escolher os projetos:
+yarn cypress open 
+
+Para rodar em modo headless (sem renderização do browser) e geração de report
+yarn test
